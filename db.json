@@ -1,0 +1,59 @@
+{
+  "details" : [
+      {
+          "name": "Katrina",
+          "date": 1980,
+          "location": "Seattle",
+          "image": "https://i.postimg.cc/6QNHjGdy/1.jpg",
+          "description": "Whoa it was huge!",
+          "likes": 4,
+          "dislikes": 1
+      },
+      {
+          "name": "Lloyd",
+          "date": 1973,
+          "location": "Oregon",
+          "image": "https://i.postimg.cc/R0QgjVRG/2.jpg",
+          "description": "I'm a believer in Sasquatch now and have been since 1973 when my wife and I saw the big guy on our honeymoon.",
+          "likes": 8,
+          "dislikes": 2
+      },
+      {
+          "name": "Natasha",
+          "date": 1996,
+          "location": "Canada",
+          "image": "https://i.postimg.cc/pTWsxbcv/3.jpg",
+          "description": "I've been a few years since I've seen it myself but I KNOW what I saw.",
+          "likes": 4,
+          "dislikes": 0
+      },
+      {
+          "name": "Pedro",
+          "date": 2011,
+          "location": "Sydney",
+          "image": "https://i.postimg.cc/L57Dzq94/4.jpg",
+          "description": "I didn't know Sasquatch was in Austrailia but I have proof.",
+          "likes": 0,
+          "dislikes": 7
+      },
+      {
+          "name": "Marlee",
+          "date": 1999,
+          "location": "Washington",
+          "image": "https://i.postimg.cc/PxS2530w/5.jpg",
+          "description": "It was 1999 and I was working late one the night of September 17th in the woods. I heard a strange noise. I saw Sasquatch.",
+          "likes": 7,
+          "dislikes": 3
+      },
+      {
+      
+          "name": "Dave",
+          "date": 1987,
+          "location": "New York",
+          "image": "https://i.postimg.cc/XqXxGK0D/6.jpg",
+          "description": "I saw some tracks and followed them through the Adirondack mountains and there it was. Staring at me. I snapped a photo.",
+          "likes": 3,
+          "dislikes": 3
+      }
+  ]
+}
