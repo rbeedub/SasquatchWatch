@@ -8,19 +8,21 @@ fetch('http://localhost:3000/details')
 }
 )
 
-
-
-
 const photoList = document.querySelector(`#photo-list`)
 
 
 
 function renderSasquatchCard(sasquatchSighting) {
     const divElement = document.createElement("div");
+    divElement.classList.add("sasquatch-card");
+    const overlay = document.createElement("div");
+    overlay.classList.add("overlay")
     const image1 = document.createElement("img");
     const likes = document.createElement("p");
     const dislikes = document.createElement("p");
     const btnLikes = document.createElement("button");
+    overlay.classList.add("overlay")
+
 
 
 
