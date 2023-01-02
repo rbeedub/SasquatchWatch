@@ -1,7 +1,10 @@
+let decades =[]
+
 fetch('http://localhost:3000/details')
 .then(response => response.json())
 .then(sasData => {
     console.log(`sasquatch data:`, sasData)
+    decades = sasData
     sasData.forEach(sasquatchSighting => {
         renderSasquatchCard(sasquatchSighting)
     })
@@ -9,7 +12,8 @@ fetch('http://localhost:3000/details')
 )
 
 const photoList = document.querySelector(`#photo-list`)
-
+const decadeStories = document.querySelector(`decade-dropdown-stories`)
+const decadeDropdown = document.querySelector(`#decade-dropdown`)
 
 
 function renderSasquatchCard(sasquatchSighting) {
@@ -21,9 +25,6 @@ function renderSasquatchCard(sasquatchSighting) {
     const likes = document.createElement("p");
     const dislikes = document.createElement("p");
     const btnLikes = document.createElement("button");
-    overlay.classList.add("overlay")
-
-
 
 
     const btnDislikes = document.createElement("button");
@@ -53,3 +54,27 @@ function renderSasquatchCard(sasquatchSighting) {
    function addDislikes(sasquatchSighting) {
         sasquatchSighting.dislikes = sasquatchSighting.dislikes + 1;
    }
+
+
+decadeDropdown.addEventListener("change", (e) => {
+    selectDecade(e.target.value)
+}
+)
+
+function selectDecade(decade) {
+    console.log(`decade:`, decade)
+    const filteredDecades = decades.filter(decade => {
+        if decade.date 
+    })
+}
+
+
+function renderSasquatchStories(sasData) {
+    const divElement = document.createElement("div")
+    divElement.classList.add("sasquatch-story");
+    divElement.innerText = sasData.description
+    decadeStories.append(divElement)
+}
+
+
+

@@ -1,0 +1,22 @@
+{
+  "name": "sasquatchwatch",
+  "version": "1.0.0",
+  "description": "Details for SasquatchWatch",
+  "main": "index.js",
+  "scripts": {
+      "watch-json": "..."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rbeedub/SasquatchWatch.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rbeedub/SasquatchWatch/issues"
+  },
+  "homepage": "https://github.com/rbeedub/SasquatchWatch#readme",
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
