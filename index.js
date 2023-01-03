@@ -11,6 +11,9 @@ fetch('http://localhost:3000/details')
 }
 )
 
+
+
+
 const photoList = document.querySelector(`#photo-list`)
 const decadeStories = document.querySelector(`decade-dropdown-stories`)
 const decadeDropdown = document.querySelector(`#decade-dropdown`)
@@ -31,50 +34,48 @@ function renderSasquatchCard(sasquatchSighting) {
     divElement.className = "card";
     image1.src = sasquatchSighting.image;
     btnLikes.classname= "like-btn";
-    btnLikes.textContent =  "Like 👍 ";
+    btnLikes.textContent = (sasquatchSighting.likes + " Likes 👍 ")
     btnDislikes.classname= "dislike-btn";
-    btnDislikes.textContent =  "Dislike 👎 ";
+    btnDislikes.textContent =  (sasquatchSighting.dislikes + " Dislikes 👎 ")
     divElement.append(image1,likes,btnLikes,btnDislikes);
     photoList.append(divElement);
     
-    btnLikes.addEventListener("click", () => {
-        addLikes(sasquatchSighting)
+    btnLikes.addEventListener("click", () => addLikes(btnLikes))
+    btnDislikes.addEventListener("click", () => addDislikes(btnDislikes))
 
-    })
-    btnDislikes.addEventListener("click", () => 
-        addDislikes(sasquatchSighting)
-    )
+
+    let number = sasquatchSighting.likes
+    let numberDislikes = sasquatchSighting.dislikes
+    
+    function addLikes(btnElement) {
+        number++;
+        btnElement.textContent = number + ` ` + ` Likes 👍 ` 
+    }
+
+    function addDislikes(btnElement) {
+        numberDislikes++;
+        btnElement.textContent = numberDislikes + ` ` + ` Dislikes 👎 `
+    
+    }
     } 
 
 
-   function addLikes(sasquatchSighting) {
-        sasquatchSighting.likes = sasquatchSighting.likes + 1;
-   }
-   
-   function addDislikes(sasquatchSighting) {
-        sasquatchSighting.dislikes = sasquatchSighting.dislikes + 1;
-   }
+    decadeDropdown.addEventListener("change", (e) => {
+    selectDecade(e.target.value)
+}
+)
+
+function selectDecade(decade) {
+    console.log(`decade:`, decade)
+}
 
 
-// decadeDropdown.addEventListener("change", (e) => {
-//     selectDecade(e.target.value)
-// }
-// )
-
-// function selectDecade(decade) {
-//     console.log(`decade:`, decade)
-//   if (decade.value > `1950` && decade.value < `1960`) 
-//     return 
-//   {
-//   }
-
-
-// function renderSasquatchStories(sasData) {
-//     const divElement = document.createElement("div")
-//     divElement.classList.add("sasquatch-story");
-//     divElement.innerText = sasData.description
-//     decadeStories.append(divElement)
-// }
+function renderSasquatchStories(sasData) {
+    const divElement = document.createElement("div")
+    divElement.classList.add("sasquatch-story");
+    divElement.innerText = sasData.description
+    decadeStories.append(divElement)
+}
 
 
 // function scuberGreetingForFeet(distance){
@@ -87,4 +88,30 @@ function renderSasquatchCard(sasquatchSighting) {
 //   } else if (distance > '2500') {
 //     return 'No can do.'
 //   }
+// }
+
+
+// let rangeA = {
+//     lower: 1950,
+//     upper: 1960
+// }
+
+// let rangeB = {
+//     lower: 1960,
+//     upper: 1970
+// }
+
+// let rangeC = {
+//     lower: 1970,
+//     upper: 1980
+// }
+
+// let rangeD = {
+//     lower: 1980,
+//     upper: 1990
+// }
+
+// let rangeE = {
+//     lower: 1990,
+//     upper: 2000
 // }
