@@ -56,25 +56,35 @@ function renderSasquatchCard(sasquatchSighting) {
    }
 
 
-decadeDropdown.addEventListener("change", (e) => {
-    selectDecade(e.target.value)
-}
-)
+// decadeDropdown.addEventListener("change", (e) => {
+//     selectDecade(e.target.value)
+// }
+// )
 
-function selectDecade(decade) {
-    console.log(`decade:`, decade)
-    const filteredDecades = decades.filter(decade => {
-        if decade.date 
-    })
-}
-
-
-function renderSasquatchStories(sasData) {
-    const divElement = document.createElement("div")
-    divElement.classList.add("sasquatch-story");
-    divElement.innerText = sasData.description
-    decadeStories.append(divElement)
-}
+// function selectDecade(decade) {
+//     console.log(`decade:`, decade)
+//   if (decade.value > `1950` && decade.value < `1960`) 
+//     return 
+//   {
+//   }
 
 
+// function renderSasquatchStories(sasData) {
+//     const divElement = document.createElement("div")
+//     divElement.classList.add("sasquatch-story");
+//     divElement.innerText = sasData.description
+//     decadeStories.append(divElement)
+// }
 
+
+// function scuberGreetingForFeet(distance){
+//   if (distance <= '400') {
+//     return 'This one is on me!'
+//   } else if(distance >'400' && distance < '2000') {
+//     return 'That will be twenty bucks.'
+//   } else if (distance >'2000' && distance <'2500') {
+//     return 'I will gladly take your thirty bucks.'
+//   } else if (distance > '2500') {
+//     return 'No can do.'
+//   }
+// }
