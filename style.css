@@ -1,1 +1,91 @@
+header {
+    font-family: Impact, Charcoal, sans-serif;
+    padding: 20px;
+    color: antiquewhite;
+}
 
+body {
+    border: 4px solid #3F1E1F;
+    background: #476D28;
+    background: -moz-linear-gradient(top, #476D28 0%, #3F1E1F 100%);
+    background: -webkit-linear-gradient(top, #476D28 0%, #3F1E1F 100%);
+    background: linear-gradient(to bottom, #476D28 0%, #3F1E1F 100%);
+}
+
+p {
+    color: antiquewhite;
+}
+
+.row{
+    border: 4px solid #3F1E1F;
+}
+
+header img{
+    height: 20%;
+    width: 20%;
+    float:right;
+    -moz-transform: translate(24px, -40px);
+    -webkit-transform: translate(24px, -40px);
+    -o-transform: translate(24px, -40px);
+    -ms-transform: translate(24px, -40px);
+    transform: translate(24px, -40px);
+}
+.col-sm-4 {
+    border-left: 4px solid #3F1E1F;
+    border-right: 4px solid #3F1E1F;
+    border-bottom: 4px solid #3F1E1F;
+}
+
+label{
+    font-family: Impact, Charcoal, sans-serif;
+    color: antiquewhite;
+}
+
+h3{
+    font-family: Impact, Charcoal, sans-serif;
+    color: antiquewhite;
+}
+
+h2 {
+    font-family: Impact, Charcoal, sans-serif;
+    color: antiquewhite;
+    -moz-transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    -o-transform: translate(0px, 5px);
+    -ms-transform: translate(0px, 5px);
+    transform: translate(0px, 5px);
+}
+
+h4 {
+    font-family: Impact, Charcoal, sans-serif;
+    color: antiquewhite;
+}
+.card button {
+    color:antiquewhite;
+    background-color: #476D28;
+    border-radius: 12px;
+    border-color: antiquewhite;
+    -moz-transform: translate(0px, -14px);
+    -webkit-transform: translate(0px, -14px);
+    -o-transform: translate(0px, -14px);
+    -ms-transform: translate(0px, -14px);
+    transform: translate(0px, -14px);
+}
+.card button:hover {
+    background: #B94F2D;
+}
+.card button:active {
+    background: #893D25;
+}
+
+.col-sm-8{
+    border-right: 4px solid #3F1E1F;
+    border-bottom: 4px solid #3F1E1F;
+}
+
+#location button{
+    color: antiquewhite;
+    background-color: #476D28;
+    border-radius: 12px;
+    border-color: antiquewhite;
+}
