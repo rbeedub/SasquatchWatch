@@ -1,21 +1,22 @@
 let decades =[]
+let allArray = []
+const url = 'http://localhost:3000/details'
 
-fetch('http://localhost:3000/details')
+fetch(url)
 .then(response => response.json())
 .then(sasData => {
     console.log(`sasquatch data:`, sasData)
-    decades = sasData
     sasData.forEach(sasquatchSighting => {
         renderSasquatchCard(sasquatchSighting)
     })
-}
-)
+})
 
 const photoList = document.querySelector(`#photo-list`)
 const decadeStories = document.querySelector(`#decade-dropdown-stories`)
-const decadeDropdown = document.querySelector(`#decade-dropdown`)
 const sightingsForm = document.querySelector(`#sightings-report`)
 const submitBtn = document.querySelector(`.btn-primary`)
+const decadeDropdown = document.querySelector(`#decade-dropdown`)
+
 
 function renderSasquatchCard(sasquatchSighting) {
     const divElement = document.createElement("div");
@@ -56,31 +57,112 @@ function renderSasquatchCard(sasquatchSighting) {
     }} 
 
 
-decadeDropdown.addEventListener("change", (e) => {
-    selectDecade(e.target.value)
-})
-
-function renderSasquatchStories(decade) {
+    function renderSasquatchStories(decade) {
     const liElement = document.createElement("li")
     liElement.innerText = decades.description
     decadeStories.append(liElement)
 }
 
-function selectDecade(decade) {
-    console.log(`decade:`, decade)
-  if (decade > `1950` && decade > `1960`) {
-    renderSasquatchStories(decade)
-  } else if(decade >'1960' && decade < '1970') {
-    return 'That will be twenty bucks.'
-}}
+fetch(url)
+    .then(response => response.json())
+    .then(dataArray => {
+        console.log(dataArray)
+        allArray = dataArray
+       
+
+        const filteredArrayFifties = dataArray.filter(element => {
+         return element.date >1950 && element.date < 1960
+        }).map
+        const filteredArraySixties = dataArray.filter(element => {
+            return element.date >1960 && element.date < 1970
+           }).map
+        const filteredArraySeventies = dataArray.filter(element => {
+        return element.date >1970 && element.date < 1980
+        }).map
+
+
+        // const descriptionsFifties = filteredArrayFifties.map(element => element.description)
+
+        console.log(`descriptions:`, descriptions)
+    }
+        )
 
 
 
-function SasquatchStory(year) {
-    const dates = [Object.keys(decades)]
-    const date = (year) => dates().find(date => date.allDates === year)
-    return dates(year).description
-} 
+ decadeDropdown.addEventListener("change", (e) => {
+        const filterByDecade = e.target.value;
+        console.log(filterByDecade)
+ })
+
+
+
+
+// const addDropDown = () => {   
+//         fetch(url)
+//         .then(response => response.json())
+//         .then(dataArray => {
+//             console.log(dataArray)
+
+//             const filtered = dataArray.filter(date => {
+//                 if (date === filterByDecade) {
+//                     return true;
+//                 }
+//             })
+//             renderSasquatchStories(filtered);
+//         })
+//     }
+
+
+
+
+// const init = () => {
+//     addDropDown();
+// }
+
+
+    // dataArray.filter(element => {
+    //     if (element.date > 1970 && element.date < 1980)
+    //         return true
+    // })
+    // console.log(`date:`, dataArray.description)
+
+
+// function findDecade(decade) {
+//   const decades = decade.find(element => {
+//         if (element.date > 1970 && element.date < 1980) {
+//         return element
+//         } else if (element.date > 1960 && element.date < 1970) {
+//                 return element
+//         }})
+
+//     console.log(`decades:`, decades.description)  
+
+
+
+sightingsForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = e.target.name.value
+    const date = e.target.date.value
+    const location = e.target.location.value
+    const image = e.target.image.value
+    const description = e.target["sighting-story"].value
+    const likes = "0"
+    const dislikes = "0"
+
+    const newStory = {
+        name,
+        date,
+        location,
+        image,
+        description,
+        likes,
+        dislikes
+    }
+    renderSasquatchCard(newStory)
+    sightingsForm.reset()
+})
+
+
 
 
 
@@ -112,27 +194,6 @@ function SasquatchStory(year) {
 //   }
 // }
 
-sightingsForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = e.target.name.value
-    const date = e.target.date.value
-    const location = e.target.location.value
-    const image = e.target.image.value
-    const description = e.target["sighting-story"].value
-    const likes = "0"
-    const dislikes = "0"
 
-    const newStory = {
-        name,
-        date,
-        location,
-        image,
-        description,
-        likes,
-        dislikes
-    }
-    renderSasquatchCard(newStory)
-    sightingsForm.reset()
-})
 
 
