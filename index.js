@@ -1,5 +1,7 @@
 let decades =[]
 let allArray = []
+let currentDecade;
+
 const url = 'http://localhost:3000/details'
 
 fetch(url)
@@ -16,6 +18,8 @@ const decadeStories = document.querySelector(`#decade-dropdown-stories`)
 const sightingsForm = document.querySelector(`#sightings-report`)
 const submitBtn = document.querySelector(`.btn-primary`)
 const decadeDropdown = document.querySelector(`#decade-dropdown`)
+const fifties = document.querySelector(`#fifties`)
+const sixties = document.querySelector(`#sixties`)
 
 
 function renderSasquatchCard(sasquatchSighting) {
@@ -38,6 +42,7 @@ function renderSasquatchCard(sasquatchSighting) {
     btnDislikes.textContent =  (sasquatchSighting.dislikes + " Dislikes 👎 ")
     divElement.append(image1,likes,btnLikes,btnDislikes);
     photoList.append(divElement);
+
     
     btnLikes.addEventListener("click", () => addLikes(btnLikes))
     btnDislikes.addEventListener("click", () => addDislikes(btnDislikes))
@@ -59,9 +64,10 @@ function renderSasquatchCard(sasquatchSighting) {
 
     function renderSasquatchStories(decade) {
     const liElement = document.createElement("li")
-    liElement.innerText = decades.description
+    liElement.innerText = decade
     decadeStories.append(liElement)
 }
+
 
 fetch(url)
     .then(response => response.json())
@@ -71,71 +77,68 @@ fetch(url)
        
 
         const filteredArrayFifties = dataArray.filter(element => {
-         return element.date >1950 && element.date < 1960
-        }).map
+        return element.date >1950 && element.date < 1960
+        }).map(element => element.description)
+
         const filteredArraySixties = dataArray.filter(element => {
-            return element.date >1960 && element.date < 1970
-           }).map
+        return element.date >1960 && element.date < 1970
+        }).map(element => element.description)
+        
         const filteredArraySeventies = dataArray.filter(element => {
         return element.date >1970 && element.date < 1980
-        }).map
+        }).map(element => element.description)
+       
+        const filteredArrayEighties = dataArray.filter(element => {
+        return element.date >1980 && element.date < 1990
+        }).map(element => element.description)
+        
+        const filteredArrayNineties = dataArray.filter(element => {
+        return element.date >1990 && element.date < 2000
+        }).map(element => element.description)
+            
+       
+         
+    decadeDropdown.addEventListener("change", (e) => {
+        decadeStories.innerHTML = ''
+        currentDecade = e.target.value
+       filterFifties = e.target[0].value 
+       filterSixties = e.target[1].value
+       filterSeventies = e.target[2].value
+       filterEighties = e.target[3].value
+       filterNineties = e.target[4].value
 
+       console.log(currentDecade)
+               
+        // if (currentDecade === 'fifties') {
+        //     renderSasquatchStories(filteredArrayFifties)
+        // } else if (currentDecade ===  `sixties`) {
+        //     renderSasquatchStories(filteredArraySixties)
+        // } else if (currentDecade === `seventies`) {
+        //     renderSasquatchStories(filteredArraySeventies)
+        // } else if (currentDecade === `eighties`) {
+        //     renderSasquatchStories(filteredArrayEighties)
+        // } else if (currentDecade === `nineties`) {
+        //     renderSasquatchStories(filteredArrayNineties)
+        // }
 
-        // const descriptionsFifties = filteredArrayFifties.map(element => element.description)
-
-        console.log(`descriptions:`, descriptions)
-    }
-        )
-
-
-
- decadeDropdown.addEventListener("change", (e) => {
-        const filterByDecade = e.target.value;
-        console.log(filterByDecade)
- })
-
-
-
-
-// const addDropDown = () => {   
-//         fetch(url)
-//         .then(response => response.json())
-//         .then(dataArray => {
-//             console.log(dataArray)
-
-//             const filtered = dataArray.filter(date => {
-//                 if (date === filterByDecade) {
-//                     return true;
-//                 }
-//             })
-//             renderSasquatchStories(filtered);
-//         })
-//     }
-
-
-
-
-// const init = () => {
-//     addDropDown();
-// }
-
-
-    // dataArray.filter(element => {
-    //     if (element.date > 1970 && element.date < 1980)
-    //         return true
-    // })
-    // console.log(`date:`, dataArray.description)
-
-
-// function findDecade(decade) {
-//   const decades = decade.find(element => {
-//         if (element.date > 1970 && element.date < 1980) {
-//         return element
-//         } else if (element.date > 1960 && element.date < 1970) {
-//                 return element
-//         }})
-
-//     console.log(`decades:`, decades.description)  
+        switch(currentDecade) {
+            case 'fifties':
+                filterFifties = renderSasquatchStories(filteredArrayFifties)
+                break;
+            case `sixties`:
+                filterSixties = renderSasquatchStories(filteredArraySixties)
+                break;
+            case `seventies`:
+                filterSeventies = renderSasquatchStories(filteredArraySeventies)
+                break;
+            case `eighties`:
+                filterEighties = renderSasquatchStories(filteredArrayEighties)
+                break;
+            case `nineties`:
+                filterNineties = renderSasquatchStories(filteredArrayNineties)
+        }
+})
+    })
 
 
 
@@ -161,39 +164,6 @@ sightingsForm.addEventListener('submit', (e) => {
     renderSasquatchCard(newStory)
     sightingsForm.reset()
 })
-
-
-
-
-
-// function goodPractices() {
-//     let game = gameObject();
-//     for (let gameKey in game) {
-
-//       let teamObj = game[gameKey];
-//       for (let teamKey in teamObj) {
-
-//         let data = teamObj.player;
-//         for (let key in data) 
-//       }
-         
-// function findMatchingDecade(date) {
-//     const
-// }
-
-
-// function scuberGreetingForFeet(distance){
-//   if (distance <= '400') {
-//     return 'This one is on me!'
-//   } else if(distance >'400' && distance < '2000') {
-//     return 'That will be twenty bucks.'
-//   } else if (distance >'2000' && distance <'2500') {
-//     return 'I will gladly take your thirty bucks.'
-//   } else if (distance > '2500') {
-//     return 'No can do.'
-//   }
-// }
-
 
 
 
