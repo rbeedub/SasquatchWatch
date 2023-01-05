@@ -166,4 +166,3 @@ sightingsForm.addEventListener('submit', (e) => {
 })
 
 
-

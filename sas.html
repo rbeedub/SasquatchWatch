@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <!-- Required meta tags -->
+    <link rel="stylesheet" href="style.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -16,6 +17,7 @@
 <body>
     <header>
         <h1>Sasquatch Watch! </h1>
+        <img src="./imgs/Sasquatch.png" id = "squatch">
     </header>
 
   <title>Sasquatch Watch!</title>    
@@ -58,23 +60,23 @@
               <form id="sightings-report">  
                 <div class="mb-3">
                     <label for="formGroupExampleInput" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="ex. Fozzy Bear">
+                    <input type="text" class="form-control" id="name" placeholder="ex. Fozzy Bear" required>
                   </div>
                   <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Date</label>
-                    <input type="date" class="form-control" id="date" placeholder="01/01/22">
+                    <input type="date" class="form-control" id="date" placeholder="01/01/22" required>
                   </div>
                   <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Location</label>
-                    <input type="text" class="form-control" id="location" placeholder="Oklahoma">
+                    <input type="text" class="form-control" id="location" placeholder="Oklahoma" required>
                   </div>
                   <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Image</label>
-                    <input type="src" class="form-control" id="image" placeholder="Link to image">
+                    <input type="src" class="form-control" id="image" placeholder="Link to image" required>
                   </div>
                   <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Sighting Story</label>
-                    <input type="textArea" class="form-control" id="sighting-story" placeholder="It was a cold and rainy night...">
+                    <input type="textArea" class="form-control" id="sighting-story" placeholder="It was a cold and rainy night..." required>
                   </div>
                   <button type="submit" class="btn-primary">Submit</button>
                 </div>
