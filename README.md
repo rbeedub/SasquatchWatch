@@ -13,7 +13,7 @@ SasquatchWatch is a website that allows you to keep tabs on Sasquatch. You can u
 ## Visuals
 
 Use this gif as an example of how the app should work.
- ![gif walkthrough](https://github.com/rbeedub/SasquatchWatch/blob/main/imgs/Sasquatch.gif?raw=true)
+ ![gif walkthrough](https://github.com/rbeedub/SasquatchWatch/blob/main/imgs/Sasquatch%20(4).gif?raw=true)
 
 
 ## Authors and acknowledgment
