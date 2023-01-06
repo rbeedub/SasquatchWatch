@@ -164,3 +164,4 @@ sightingsForm.addEventListener('submit', (e) => {
     sightingsForm.reset()
 })
 
+
