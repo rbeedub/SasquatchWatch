@@ -61,7 +61,6 @@ function renderSasquatchCard(sasquatchSighting) {
         btnElement.textContent = numberDislikes + ` ` + ` Dislikes 👎 `
     }} 
 
-
     function renderSasquatchStories(decade) {
     const liElement = document.createElement("li")
     liElement.innerText = decade
