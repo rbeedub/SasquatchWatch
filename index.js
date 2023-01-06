@@ -1,6 +1,5 @@
 let decades =[]
 let allArray = []
-let currentDecade;
 
 const url = 'http://localhost:3000/details'
 
@@ -65,9 +64,10 @@ function renderSasquatchCard(sasquatchSighting) {
     const liElement = document.createElement("li")
     liElement.innerText = decade
     decadeStories.append(liElement)
-}
+    }
 
 
+    
 fetch(url)
     .then(response => response.json())
     .then(dataArray => {
@@ -98,8 +98,8 @@ fetch(url)
        
          
     decadeDropdown.addEventListener("change", (e) => {
-        decadeStories.innerHTML = ''
-        currentDecade = e.target.value
+       decadeStories.innerHTML = ''
+       currentDecade = e.target.value
        filterFifties = e.target[0].value 
        filterSixties = e.target[1].value
        filterSeventies = e.target[2].value
@@ -136,8 +136,8 @@ fetch(url)
             case `nineties`:
                 filterNineties = renderSasquatchStories(filteredArrayNineties)
         }
-})
     })
+})
 
 
 
